@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web.Security;
 using ShoppingCart.Models;
 using ShoppingCart.Logic;
+using static ShoppingCart.Models.ProductDatabaseInitializer;
 
 
 namespace ShoppingCart
@@ -22,6 +23,8 @@ namespace ShoppingCart
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+
+        
         protected void Page_Init(object sender, EventArgs e)
         {
             // The code below helps to protect against XSRF attacks
@@ -91,5 +94,11 @@ namespace ShoppingCart
             return query;
         }
 
+        protected void GetProducts__(object sender, EventArgs e)
+        {
+          
+            ProductContext product = new ProductContext();
+            ProductDatabaseInitializer.Seed(product);
+        }
     }
 }

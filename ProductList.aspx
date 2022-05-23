@@ -1,70 +1,66 @@
 ﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master"
 AutoEventWireup="true"
-CodeBehind="ProductList.aspx.cs" Inherits="ShoppingCart.ProductList" %>
+    CodeBehind="ProductList.aspx.cs" Inherits="ShoppingCart.ProductList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<section>
-<div>
-<hgroup>
-    <h2><%: Page.Title %></h2>
-</hgroup>
-<asp:ListView ID="productList" runat="server"
-              DataKeyNames="id" GroupItemCount="4"
-              ItemType="ShoppingCart.Models.Product" SelectMethod="GetProducts">
-<EmptyDataTemplate>
-    <table >
-        <tr>
-            <td>No data was returned.</td>
-        </tr>
-    </table>
-</EmptyDataTemplate>
-<EmptyItemTemplate>
-    <td/>
-</EmptyItemTemplate>
-<GroupTemplate>
-    <tr id="itemPlaceholderContainer" runat="server">
-        <td id="itemPlaceholder" runat="server"></td>
-    </tr>
-</GroupTemplate>
-<ItemTemplate>
-<td runat="server">
-<table>
-<tr>
-<td>
-<a
-    href="ProductDetails.aspx?productID=<%#:Item.id%>">
-                                        <img
-                                            src="/Catalog/Images/Thumbs/<%#:Item.image%>"
-                                            width="100" height="75" style="border:
-                                                                                 solid" /></a>
+    <section>
+        <div>
+            <hgroup>
+                  <h2><%: Page.Title %></h2>
+            </hgroup>
+
+            <asp:ListView ID="productList" runat="server"
+                DataKeyNames="id" GroupItemCount="4"
+                ItemType="ShoppingCart.Models.Product" SelectMethod="GetProducts">
+                <EmptyDataTemplate>
+                     <table >
+                         <tr>
+                            <td>No data was returned.</td>
+                        </tr>
+                     </table>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                     <td/>
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                     <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                     </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a
+                                        href="ProductDetails.aspx?productID=<%#:Item.id%>">
+                                        <a href=Item.image></a>
+                                        <img src ="<%#:Item.image%>"
+                                             width="100" height="75" style="border:
+                                                                                 solid"/>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a
-                                        href="ProductDetails.aspx?productID=<%#:Item.id%>">
+                                        href="ProductDetails.aspx?productID=<%#:Item.description%>">
                                         <span>
-                                            <%#:Item.title%>
+                                            <%#:Item.id%>
                                         </span>
                                     </a>
                                     <br />
                                     <span>
                                         <b>Price: </b><%#:String.Format("{0:c}",
-                                                              Item.price)%>
+                                                              Item.price) %>
                                     </span>
                                     <br />
-                                    <a
-                                        href="/AddToCart.aspx?productID=<%#:Item.id %>">
-                                        <span class="ProductListItem">
-                                            <b>Add To Cart<b>
-                                        </span>
-                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                             </tr>
                         </table>
-                    </p>
+                        </p>
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>

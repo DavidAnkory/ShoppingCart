@@ -12,9 +12,12 @@ namespace ShoppingCart.Models
     {
 
 
-        protected override void Seed(ProductContext context)
+        public static  void Seed(ProductContext context)
         {
-            GetProducts().ForEach(p => context.Products.Add(p));
+           
+            context.Products.AddRange(GetProducts());
+            context.SaveChanges();
+
         }
 
         private static string GetJson()
@@ -29,7 +32,7 @@ namespace ShoppingCart.Models
         }
 
 
-        private static List<Product> GetProducts()
+        public static List<Product> GetProducts()
         {
             List<Product> products = JsonConvert.DeserializeObject<List<Product>>(GetJson());
             return products;

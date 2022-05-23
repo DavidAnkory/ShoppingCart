@@ -53,9 +53,7 @@
                     <a class="navbar-brand" runat="server" href="~/">Ankory Shop LTD</a>
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ProductList">Products</a></li>
+                        <li><a runat="server" href="~/ProductList.aspx"  onclick="GetProducts__" resource="~/ProductList.aspx" >Products</a></li>
                         <li><a runat="server" href="~/ShoppingCart" id="cartCount">Cart</a></li>
                     </ul>
                 </div>
@@ -64,25 +62,11 @@
         <div id="TitleContent" style="text-align: center">
             <a runat="server" href="~/">
                 <asp:Image ID="Image1" runat="server"
-                           ImageUrl="~/Images/Capture.PNG" BorderStyle="None" CssClass="auto-style1" />
+                           ImageUrl="~/Images/Capture.PNG" BorderStyle="None"  CssClass="auto-style1" />
             </a>    
             <br />
         </div>
-        <div id="CategoryMenu" style="text-align: center">
-            <asp:ListView ID="categoryList"
-                          ItemType="ShoppingCart.Models.Category"
-                          runat="server"
-                          SelectMethod="GetCategories" >
-                <ItemTemplate>
-                    <b style="font-size: large; font-style: normal">
-                        <a href="/ProductList.aspx?id=<%#: Item.category %>">
-                            <%#: Item.Description %>
-                        </a>
-                    </b>
-                </ItemTemplate>
-                <ItemSeparatorTemplate> | </ItemSeparatorTemplate>
-            </asp:ListView>
-        </div>
+       
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
