@@ -18,7 +18,7 @@ namespace ShoppingCart
         public IQueryable<Product> GetProducts([QueryString("id")] int?
             categoryId)
         {
-            var _db = new ShoppingCart.Models.ProductContext();
+            var _db = new ProductContext();
             IQueryable<Product> query = _db.Products;
             if (categoryId.HasValue && categoryId > 0)
             {

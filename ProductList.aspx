@@ -52,6 +52,12 @@ CodeBehind="ProductList.aspx.cs" Inherits="ShoppingCart.ProductList" %>
                                                               Item.price)%>
                                     </span>
                                     <br />
+                                    <a
+                                        href="/AddToCart.aspx?productID=<%#:Item.id %>">
+                                        <span class="ProductListItem">
+                                            <b>Add To Cart<b>
+                                        </span>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
