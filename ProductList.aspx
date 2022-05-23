@@ -31,9 +31,8 @@ AutoEventWireup="true"
                         <table>
                             <tr>
                                 <td>
-                                    <a
-                                        href="ProductDetails.aspx?productID=<%#:Item.id%>">
-                                        <a href=Item.image></a>
+                                    <a>
+                                    <a href=Item.image></a>
                                         <img src ="<%#:Item.image%>"
                                              width="100" height="75" style="border:
                                                                                  solid"/>
@@ -45,12 +44,14 @@ AutoEventWireup="true"
                                     <a
                                         href="ProductDetails.aspx?productID=<%#:Item.id%>">
                                         <span>
-                                            <%#:Item.id%>
+                                            <%#:Item.title%>
                                         </span>
                                     </a>
+                                   
+
                                     <br />
                                     <span>
-                                        <b>Title: </b><%#:Item.title %>
+                                        <b>Product Number: </b><%#:Item.id %>
                                     </span>
                                     <br />
                                     <span>
@@ -66,9 +67,14 @@ AutoEventWireup="true"
                                                               Item.price) %>
                                     </span>
                                     <br />
-                                    <span>
-                                        <asp:Button style="background-color: aquamarine" runat="server" Text= "Add To Cart:"> </asp:Button>
-                                    </span>
+                                    
+                                    <a
+                                        href="/AddToCart.aspx?productID=<%#:Item.id %>">
+                                        <span class="ProductListItem">
+                                            <b>Add To Cart<b>
+                                        </span>
+                                    </a>
+
                                 </td>
                             </tr>
                             <tr>

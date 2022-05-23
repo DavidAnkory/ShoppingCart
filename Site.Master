@@ -17,10 +17,15 @@
 
     <style type="text/css">
         .auto-style1 {
-            margin-top: 2px;
+            margin-top: 0px;
             margin-bottom: 0px;
             margin-left: 0px;
-            margin-right: 0px;
+            margin-right: 3px;
+        }
+        .auto-style2 {
+            left: 0px;
+            top: 0px;
+            height: 80px;
         }
         </style>
 
@@ -47,7 +52,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="auto-style2">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" runat="server" href="~/">Ankory Shop LTD</a>
@@ -62,7 +67,7 @@
         <div id="TitleContent" style="text-align: center">
             <a runat="server" href="~/">
                 <asp:Image ID="Image1" runat="server"
-                           ImageUrl="~/Images/Capture.PNG" BorderStyle="None"  CssClass="auto-style1" />
+                           ImageUrl="~/Images/Capture.PNG" BorderStyle="None"  CssClass="auto-style1" Height="261px" Width="759px" />
             </a>    
             <br />
         </div>
