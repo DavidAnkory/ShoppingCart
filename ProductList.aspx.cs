@@ -6,7 +6,7 @@ using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ShoppingCart.Models;
-
+using ShoppingCart.Logic;
 namespace ShoppingCart
 {
     public partial class ProductList : System.Web.UI.Page
@@ -25,6 +25,11 @@ namespace ShoppingCart
                 query = query.Where(p => p.id == categoryId);
             }
             return query;
+        }
+
+        protected void productList_SelectedIndexChanged(object sender, EventArgs e) //ADD TO CART
+        {
+            
         }
     }
 

@@ -43,17 +43,32 @@ AutoEventWireup="true"
                             <tr>
                                 <td>
                                     <a
-                                        href="ProductDetails.aspx?productID=<%#:Item.description%>">
+                                        href="ProductDetails.aspx?productID=<%#:Item.id%>">
                                         <span>
                                             <%#:Item.id%>
                                         </span>
                                     </a>
                                     <br />
                                     <span>
+                                        <b>Title: </b><%#:Item.title %>
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <b>Category: </b><%#:Item.category %>
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <b>My rate is: </b><%#:Item.rating.rate %>
+                                    </span>
+                                    <br />
+                                    <span>
                                         <b>Price: </b><%#:String.Format("{0:c}",
                                                               Item.price) %>
                                     </span>
                                     <br />
+                                    <span>
+                                        <asp:Button style="background-color: aquamarine" runat="server" Text= "Add To Cart:"> </asp:Button>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
