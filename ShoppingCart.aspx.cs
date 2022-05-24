@@ -26,7 +26,7 @@ namespace ShoppingCart
                     // Display Shipping
                     if (numberOfProducts > 4)
                     {
-                        lblShipping.Text = String.Format("{0:c}", 50);
+                        lblShipping.Text = String.Format("{0:c}", 20);
                     }
                     else
                     {
@@ -84,7 +84,7 @@ namespace ShoppingCart
                 decimal numberOfProducts = usersShoppingCart.GetCount();
                 if (numberOfProducts > 4)
                 {
-                    lblShipping.Text = String.Format("{0:c}", 10);
+                    lblShipping.Text = String.Format("{0:c}", 20);
                 }
                 else
                 {

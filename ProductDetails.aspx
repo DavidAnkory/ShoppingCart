@@ -20,18 +20,9 @@ Inherits="ShoppingCart.ProductDetails" %>
                     </td>
                     <td>&nbsp;</td>
                     <td style="vertical-align: top; text-align:left;">
-                        <b>Description:</b><br /><%#:Item.description %><br/>
-                        <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.price) %></span>
-                        <br/>
-                        <span>
-                            <b>Product Number:</b>
-                            &nbsp;<%#:Item.id %>
-                        </span>
-                        <br />
-                        <a
-                            href="/AddToCart.aspx?productID=<%#:Item.id %>">
-                            <span class="ProductListItem">
-                                <b>Add To Cart<b>
+                        <b>Description:</b><br /><%#:Item.description %><br/><span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.price) %></span><br/><span><b>Product Number:</b>
+                            &nbsp;<%#:Item.id %></span><br /><a
+                            href="/AddToCart.aspx?productID=<%#:Item.id %>"><span class="ProductListItem"><b>Add To Cart<b>
                             </span>
                         </a>
 

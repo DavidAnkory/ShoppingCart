@@ -36,7 +36,7 @@ Inherits="ShoppingCart.ShoppingCart" %>
         </Columns>
     </asp:GridView>
     <div>
-        <p> <b>Please note:</b> 5 or more products incur shipping charges</p>
+        <p> <b>Please note:</b> When ordering 5 or more products, you will be charged a shipping fee of 20$</p>
         <strong>
             <asp:Label ID="LabelShipping" runat="server" Text="Shipping Total:"></asp:Label>
             <asp:Label ID="lblShipping" runat="server"
