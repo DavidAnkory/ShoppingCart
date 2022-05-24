@@ -82,14 +82,13 @@ namespace ShoppingCart
                     usersShoppingCart.GetCount());
                 cartCount.InnerText = cartStr;
             }
-            prosucts_OnDataBinding();
         }
 
 
-        public void prosucts_OnDataBinding()
-        {
-            ProductContext product = new ProductContext();
-            Seed(product);
-        }
+        //public void prosucts_OnDataBinding()
+        //{
+        //    ProductContext product = new ProductContext();
+        //    Seed(product);
+        //}
     }
 }

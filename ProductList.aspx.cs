@@ -12,10 +12,7 @@ namespace ShoppingCart
 {
     public partial class ProductList : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-           
-        }
+      
         public IQueryable<Product> GetProducts([QueryString("id")] int?
             categoryId)
         {
@@ -28,10 +25,6 @@ namespace ShoppingCart
             return query;
         }
 
-        protected void productList_SelectedIndexChanged(object sender, EventArgs e) //ADD TO CART
-        {
-            
-        }
     }
 
 }
