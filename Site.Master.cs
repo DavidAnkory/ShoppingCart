@@ -15,15 +15,11 @@ namespace ShoppingCart
 {
     public partial class SiteMaster : MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-
+        
         
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -86,19 +82,14 @@ namespace ShoppingCart
                     usersShoppingCart.GetCount());
                 cartCount.InnerText = cartStr;
             }
-        }
-        public IQueryable<Category> GetCategories()
-        {
-            var _db = new ProductContext();
-            IQueryable<Category> query = _db.Categories;
-            return query;
+            prosucts_OnDataBinding();
         }
 
-        protected void GetProducts__(object sender, EventArgs e)
+
+        public void prosucts_OnDataBinding()
         {
-          
             ProductContext product = new ProductContext();
-            ProductDatabaseInitializer.Seed(product);
+            Seed(product);
         }
     }
 }

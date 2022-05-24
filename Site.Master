@@ -58,8 +58,8 @@
                     <a class="navbar-brand" runat="server" href="~/">Ankory Shop LTD</a>
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/ProductList.aspx"  onclick="GetProducts__" resource="~/ProductList.aspx" >Products</a></li>
-                        <li><a runat="server" href="~/ShoppingCart" id="cartCount">Cart</a></li>
+                        <li><a runat="server" href="~/ProductList.aspx" onclick="GetProducts__" resource="~/ProductList.aspx" id="prosucts" >Products</a></li>
+                        <li><a runat="server" href="~/ShoppingCart.aspx" id="cartCount">Cart</a></li>
                     </ul>
                 </div>
             </div>

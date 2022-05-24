@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ShoppingCart.Models;
 using ShoppingCart.Logic;
+using ShoppingCart.Models;
+
 namespace ShoppingCart
 {
     public partial class ProductList : System.Web.UI.Page
