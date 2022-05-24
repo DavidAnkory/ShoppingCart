@@ -18,10 +18,21 @@ namespace ShoppingCart
             {
                 decimal cartTotal = 0;
                 cartTotal = usersShoppingCart.GetTotal();
+                decimal numberOfProducts = usersShoppingCart.GetCount();
                 if (cartTotal > 0)
                 {
                     // Display Total.
                     lblTotal.Text = String.Format("{0:c}", cartTotal);
+                    // Display Shipping
+                    if (numberOfProducts > 4)
+                    {
+                        lblShipping.Text = String.Format("{0:c}", 50);
+                    }
+                    else
+                    {
+                        lblShipping.Text = String.Format("{0:c}", 0);
+                    }
+                    
                 }
                 else
                 {
@@ -68,6 +79,18 @@ namespace ShoppingCart
                 usersShoppingCart.UpdateShoppingCartDatabase(cartId, cartUpdates);
                 CartList.DataBind();
                 lblTotal.Text = String.Format("{0:c}", usersShoppingCart.GetTotal());
+                decimal cartTotal = 0;
+                cartTotal = usersShoppingCart.GetTotal();
+                decimal numberOfProducts = usersShoppingCart.GetCount();
+                if (numberOfProducts > 4)
+                {
+                    lblShipping.Text = String.Format("{0:c}", 10);
+                }
+                else
+                {
+                    lblShipping.Text = String.Format("{0:c}", 0);
+                }
+                
                 return usersShoppingCart.GetCartItems();
             }
         }

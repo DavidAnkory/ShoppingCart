@@ -8,7 +8,7 @@ Inherits="ShoppingCart.ShoppingCart" %>
               ShowFooter="True" GridLines="Vertical" CellPadding="4"
               ItemType="WingtipToys.Models.CartItem"
               SelectMethod="GetShoppingCartItems"
-              CssClass="table table-striped table-bordered" >
+              CssClass="table table-striped table-bordered" Height="178px" >
 <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ID"
                             SortExpression="ProductID" />
@@ -35,6 +35,15 @@ Inherits="ShoppingCart.ShoppingCart" %>
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <div>
+        <p> <b>Please note:</b> 5 or more products incur shipping charges</p>
+        <strong>
+            <asp:Label ID="LabelShipping" runat="server" Text="Shipping Total:"></asp:Label>
+            <asp:Label ID="lblShipping" runat="server"
+                       EnableViewState="false"></asp:Label>
+        </strong>
+    </div>
+
     <div>
         <p></p>
         <strong>
